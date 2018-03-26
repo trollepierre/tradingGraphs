@@ -1,5 +1,5 @@
 
-import {addInputs,subtractInputs} from '../src/js/actions/calculatorActions'
+import {addInputs,subtractInputs} from '../src/actions/calculatorActions'
 
 describe('>>>A C T I O N --- Test calculatorActions',()=>{
     it('+++ actionCreator addInputs', () => {

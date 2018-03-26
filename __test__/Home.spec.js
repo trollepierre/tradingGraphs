@@ -1,13 +1,13 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme';
 import renderer from 'react-test-renderer'
-import ConnectedHome,{Home} from '../src/js/components/Home'
+import ConnectedHome,{Home} from '../src/components/Home'
 import configureStore from 'redux-mock-store'
 import {Provider} from 'react-redux'
 
-import {addInputs,subtractInputs} from '../src/js/actions/calculatorActions'
+import {addInputs,subtractInputs} from '../src/actions/calculatorActions'
 import {createStore} from 'redux'
-import calculatorReducers from '../src/js/reducers/calculatorReducers'
+import calculatorReducers from '../src/reducers/calculatorReducers'
 
 // Snapshot for Home React Component
 describe('>>>H O M E --- Snapshot',()=>{

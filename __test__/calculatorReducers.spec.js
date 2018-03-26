@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow, mount } from 'enzyme';
 import renderer from 'react-test-renderer'
 
-import calculatorReducers from '../src/js/reducers/calculatorReducers'
+import calculatorReducers from '../src/reducers/calculatorReducers'
 
 describe('>>>R E D U C E R --- Test calculatorReducers',()=>{
     it('+++ reducer for ADD_INPUT', () => {
