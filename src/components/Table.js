@@ -8,7 +8,7 @@ const mapStateToProps = (state) => ({
 })
 
 
-export class Home extends React.Component{
+export class Table extends React.Component{
   display(value, columnName) {
     return value.stocks[columnName];
   }
@@ -41,4 +41,4 @@ export class Home extends React.Component{
 	}
 }
 
-export default connect(mapStateToProps)(Home)
+export default connect(mapStateToProps)(Table)

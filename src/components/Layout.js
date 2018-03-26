@@ -1,5 +1,6 @@
 import React from "react";
-import Home from "./Home"
+import Table from "./Table"
+import Graph from './Graph';
 
 export default class Layout extends React.Component{
 	render(){	
@@ -7,7 +8,8 @@ export default class Layout extends React.Component{
 		return(
 			<div>
 				 <h1>Trading Values</h1>
-				 <Home/>
+				 <Graph/>
+				 <Table/>
 			</div>
 		);
 	}
