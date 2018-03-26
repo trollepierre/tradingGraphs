@@ -1,7 +1,7 @@
 import React from "react"
 import {connect} from 'react-redux'
 import axios from 'axios';
-import {updateTradingValues} from '../actions/updateTradingValues'
+import {updateTradingValues} from '../actions/updateTradingValuesActions'
 
 const mapStateToProps = (state) => ({
   tradingValues:state.tradingValues
@@ -28,7 +28,7 @@ export class Home extends React.Component{
 					<tbody>
 					<tr>
 						<th>CAC40</th>
-            { this.props.tradingValues.map(value => <td key={`CAC4O-${value.index}`}>{ this.display(value, 'CAC40') }</td>) }
+            { this.props.tradingValues.map(value => <td key={`CAC40-${value.index}`}>{ this.display(value, 'CAC40') }</td>) }
 					</tr>
 					<tr>
 						<th>NASDAQ</th>
