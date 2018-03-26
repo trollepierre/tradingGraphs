@@ -6,7 +6,7 @@ export default class Layout extends React.Component{
 
 		return(
 			<div>
-				 <h1>Basic Calculator</h1>
+				 <h1>Trading Values</h1>
 				 <Home/>
 			</div>
 		);
