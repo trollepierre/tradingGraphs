@@ -1,13 +1,29 @@
-const initialState = {tradingValues:[]}
+import {
+  TRADING_VALUES_FAILURE,
+  TRADING_VALUES_SUCCESS,
+  TRADING_VALUES_REQUEST } from '../actions/updateTradingValuesActions';
 
-const updateTradingValuesReducers = (state=initialState,action) => {
-    switch (action.type){
-        case 'UPDATE_TRADING_VALUES':
-            return {...state,tradingValues:action.tradingValues}
-        default: return {...state}
+const initialState = { tradingValues: [], isFetching: false }
 
-    }
-
+const updateTradingValuesReducers = (state = initialState, action) => {
+  switch (action.type) {
+    case TRADING_VALUES_REQUEST:
+      return Object.assign({}, state, {
+        isFetching: true,
+      })
+    case TRADING_VALUES_SUCCESS:
+      return Object.assign({}, state, {
+        isFetching: false,
+        tradingValues: action.payload.data,
+        lastUpdated: Date.now()
+      })
+    case TRADING_VALUES_FAILURE:
+      return Object.assign({}, state, {
+        isFetching: false,
+      })
+    default:
+      return state
+  }
 }
 
 export default updateTradingValuesReducers

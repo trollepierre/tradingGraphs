@@ -19,7 +19,8 @@
     "react-d3": "^0.4.0",
     "react-dom": "^15.4.1",
     "react-redux": "^5.0.1",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "redux-axios-middleware": "^4.0.0"
   },
   "devDependencies": {
     "babel-jest": "^18.0.0",

@@ -1,18 +1,26 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import {createStore} from 'redux'
-import {Provider} from 'react-redux'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { applyMiddleware, createStore } from 'redux';
+import { Provider } from 'react-redux';
+import axios from 'axios';
+import axiosMiddleware from 'redux-axios-middleware';
 
-import updateTradingValuesReducers from './reducers/updateTradingValuesReducers'
-import Layout from "./components/Layout";
+import updateTradingValuesReducers from './reducers/updateTradingValuesReducers';
+import Layout from './components/Layout';
 
 const app = document.getElementById('app')
 
-const store = createStore(updateTradingValuesReducers)
+const client = axios.create({
+  baseURL: 'http://localhost:8000/?count=20',
+  responseType: 'json'
+});
+
+const store = createStore(updateTradingValuesReducers,
+  applyMiddleware(axiosMiddleware(client)));
 
 ReactDOM.render(
-	<Provider store={store}>
-		<Layout/>
-	</Provider>
-	, app);
+  <Provider store={store}>
+    <Layout/>
+  </Provider>
+  , app);
 
