@@ -14,8 +14,7 @@ const updateTradingValuesReducers = (state = initialState, action) => {
     case TRADING_VALUES_SUCCESS:
       return Object.assign({}, state, {
         isFetching: false,
-        tradingValues: action.payload.data,
-        lastUpdated: Date.now()
+        tradingValues: action.payload.data
       })
     case TRADING_VALUES_FAILURE:
       return Object.assign({}, state, {

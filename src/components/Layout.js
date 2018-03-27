@@ -10,9 +10,8 @@ const mapStateToProps = (state) => ({
   tradingValues: state.tradingValues
 })
 
-class Layout extends React.Component{
+export class Layout extends React.Component{
   componentDidMount() {
-    console.log('componentDidMount');
     const { dispatch } = this.props
     dispatch(updateTradingValues())
   }
