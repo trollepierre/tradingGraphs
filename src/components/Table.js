@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Cell from './Cell';
 
 const mapStateToProps = (state) => {
   let tradingValues = state.tradingValues ? state.tradingValues : [];
@@ -10,21 +11,10 @@ const mapStateToProps = (state) => {
 
 export class Table extends React.Component {
 
-  static truncate(number) {
-    return Math.round(100 * number) / 100;
-  }
-
-  display(value, columnName) {
-    return Table.truncate(value.stocks[columnName]);
-  }
-
   render() {
     const solidBordered = {
-      'border-style': 'solid',
+      'border': '1px solid grey',
     };
-    const paddedTd = {
-      padding: '5px',
-    }
 
     return (
       <div className="container">
@@ -32,13 +22,15 @@ export class Table extends React.Component {
           <tbody>
           <tr>
             <th>CAC40</th>
-            {this.props.tradingValues.map(value => <td style={paddedTd}
-              key={`CAC40-${value.index}`}>{this.display(value, 'CAC40')}</td>)}
+            {this.props.tradingValues.map(value =>
+            <Cell key={`${'CAC40'}-${value.index}`} value={value} type='CAC40'/>
+            )}
           </tr>
           <tr>
             <th>NASDAQ</th>
-            {this.props.tradingValues.map(value => <td style={paddedTd}
-              key={`NASDAQ-${value.index}`}>{this.display(value, 'NASDAQ')}</td>)}
+            {this.props.tradingValues.map(value =>
+              <Cell key={`${'NASDAQ'}-${value.index}`} value={value} type='NASDAQ'/>
+            )}
           </tr>
           </tbody>
         </table>

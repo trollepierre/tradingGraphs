@@ -4,7 +4,7 @@ exports[`>>>TABLE --- Snapshot +++capturing Snapshot of Table 1`] = `
   <table
     style={
       Object {
-        "border-style": "solid",
+        "border": "1px solid grey",
       }
     }>
     <tbody>

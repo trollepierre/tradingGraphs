@@ -1,0 +1,10 @@
+exports[`>>>CELL --- Snapshot +++capturing Snapshot of Cell 1`] = `
+<td
+  style={
+    Object {
+      "padding": "5px",
+    }
+  }>
+  39.45
+</td>
+`;
