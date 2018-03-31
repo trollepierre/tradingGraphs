@@ -10,6 +10,8 @@ const initialState = {
 const updateTradingValueReducer = (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_TRADING_VALUE: {
+      console.log('suis je dans le reducer ???????????????');
+
       const { index, newValue, stockMarket } = action;
       const newUpdatedValue = { index, newValue, stockMarket };
       const updatedValues = [
@@ -17,6 +19,8 @@ const updateTradingValueReducer = (state = initialState, action) => {
           !(updatedValue.index === index && updatedValue.stockMarket === stockMarket)),
         newUpdatedValue,
       ];
+      console.log(updatedValues);
+
       return {
         updatedValues,
         tradingValues: applyUpdateIntoDataFromApi([newUpdatedValue], state.tradingValues),

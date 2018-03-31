@@ -20,7 +20,7 @@ class Cell extends React.Component {
   updateCellValue(newValue) {
     console.log(newValue);
     const { dispatch, value, type } = this.props;
-    dispatch(updateTradingValue(newValue, value, type));
+    dispatch(updateTradingValue(newValue, value.index, type));
   }
 
   render() {

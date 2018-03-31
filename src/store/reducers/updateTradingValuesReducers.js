@@ -16,6 +16,8 @@ const updateTradingValuesReducers = (state = initialState, action) => {
       };
 
     case TRADING_VALUES_SUCCESS:
+      console.log('SUCCESS');
+
       return {
         ...state,
         isFetching: false,

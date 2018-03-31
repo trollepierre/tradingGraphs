@@ -1,6 +1,8 @@
 const applyUpdateIntoDataFromApi = (updatedValues, tradingValues) =>
   tradingValues.map((tradingValue) => {
     const updates = updatedValues.filter(updatedValue => tradingValue.index === updatedValue.index);
+    console.log('updates :');
+    console.log(updates);
 
     if (updates.length === 0) {
       return tradingValue;
@@ -8,7 +10,11 @@ const applyUpdateIntoDataFromApi = (updatedValues, tradingValues) =>
     const cac40Updates = updates.filter(update => update.stockMarket === 'CAC40');
     const nasdaqUpdates = updates.filter(update => update.stockMarket === 'NASDAQ');
 
+    console.log('je passe dans apply');
+
     if (cac40Updates.length === 0) {
+      console.log('je récupère le nombre ', nasdaqUpdates[0].newValue);
+
       return ({
         ...tradingValue,
         stocks: {
@@ -18,6 +24,8 @@ const applyUpdateIntoDataFromApi = (updatedValues, tradingValues) =>
       });
     }
     if (nasdaqUpdates.length === 0) {
+      console.log('je récupère le nombre ', cac40Updates[0].newValue);
+
       return ({
         ...tradingValue,
         stocks: {

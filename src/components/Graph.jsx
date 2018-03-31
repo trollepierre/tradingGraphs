@@ -3,7 +3,12 @@ import { connect } from 'react-redux';
 import { LineChart } from 'react-d3';
 
 const mapStateToProps = (state) => {
-  const tradingValues = state.tradingValues ? state.tradingValues : [];
+  const tradingValues = state.updateTradingValuesReducers.tradingValues ? state.updateTradingValuesReducers.tradingValues : [];
+  console.log(tradingValues);
+  const filter = tradingValues.filter(val => val.stocks['CAC40'] >= 1);
+  if (filter.length > 1) {
+    console.log('gagne');
+  }
   return ({
     tradingValues,
   });

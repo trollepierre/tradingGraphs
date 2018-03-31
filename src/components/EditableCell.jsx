@@ -2,6 +2,8 @@ import React from 'react';
 
 const EditableCell = (props) => {
   function handleValueChange(event) {
+    console.log('on change');
+
     const newValue = event.target.value;
     props.onNewValue(newValue);
   }

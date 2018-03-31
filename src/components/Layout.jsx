@@ -5,11 +5,10 @@ import Graph from './Graph.jsx';
 import { updateTradingValues } from '../store/actions/updateTradingValuesActions';
 
 const mapStateToProps = (state) => {
-  console.log('mapStateToProps');
-  console.log(state);
+  const tradingValues = state.updateTradingValuesReducers.tradingValues;
   return ({
-    tradingValues: state.tradingValues,
-    updatedValues: state.updatedValues,
+    tradingValues: tradingValues,
+    updatedValues: state.updateTradingValuesReducers.updatedValues,
   });
 };
 
@@ -21,6 +20,7 @@ export class Layout extends React.Component {
 
   componentDidMount() {
     this.dispatchUpdateTradingValues();
+    setInterval(this.dispatchUpdateTradingValues, 1000);
   }
 
   dispatchUpdateTradingValues() {
@@ -28,11 +28,11 @@ export class Layout extends React.Component {
     dispatch(updateTradingValues());
   }
 
-  componentDidUpdate() {
-    console.log('componentDidUpdate');
-    const { dispatch } = this.props;
-    dispatch(updateTradingValues());
-  }
+  // componentDidUpdate() {
+  //   console.log('componentDidUpdate');
+  //   const { dispatch } = this.props;
+  //   dispatch(updateTradingValues());
+  // }
 
   render() {
     const layoutGraph = {
@@ -43,16 +43,17 @@ export class Layout extends React.Component {
     };
 
     console.log('render Layout');
+    console.log(this.props.tradingValues);
 
     return (
       <div>
         <h1>Trading Values</h1>
         <button onClick={this.dispatchUpdateTradingValues}>Update please</button>
         <div style={layoutGraph}>
-          <Graph tradingValues={this.props.tradingValues} />
+          <Graph/>
         </div>
         <div style={layoutTable}>
-          <Table tradingValues={this.props.tradingValues} />
+          <Table/>
         </div>
       </div>
     );
