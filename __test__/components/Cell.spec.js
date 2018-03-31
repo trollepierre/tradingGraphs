@@ -6,7 +6,7 @@ import Cell from '../../src/components/Cell'
 const value = { "timestamp": 1522088675779, "index": 1171, "stocks": { "NASDAQ": 5.4068, "CAC40": 39.45096 } }
 
 // Snapshot for Cell React Component
-describe('>>>CELL --- Snapshot', () => {
+xdescribe('>>>CELL --- Snapshot', () => {
   it('+++capturing Snapshot of Cell', () => {
     const renderedValue = renderer.create(<Cell type='CAC40' value={value}/>).toJSON()
     expect(renderedValue).toMatchSnapshot();
@@ -14,7 +14,7 @@ describe('>>>CELL --- Snapshot', () => {
 
 });
 
-describe('>>>CELL --- Shallow Render REACT COMPONENTS', () => {
+xdescribe('>>>CELL --- Shallow Render REACT COMPONENTS', () => {
   let wrapper
 
   beforeEach(() => {

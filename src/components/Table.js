@@ -23,13 +23,22 @@ export class Table extends React.Component {
           <tr>
             <th>CAC40</th>
             {this.props.tradingValues.map(value =>
-            <Cell key={`${'CAC40'}-${value.index}`} value={value} type='CAC40'/>
+              <Cell key={`${'CAC40'}-${value.index}`}
+                    value={value}
+                    type='CAC40'
+                    isEditMode={false}
+              />
             )}
           </tr>
           <tr>
             <th>NASDAQ</th>
             {this.props.tradingValues.map(value =>
-              <Cell key={`${'NASDAQ'}-${value.index}`} value={value} type='NASDAQ'/>
+              <Cell
+                key={`${'NASDAQ'}-${value.index}`}
+                value={value}
+                type='NASDAQ'
+                isEditMode={false}
+              />
             )}
           </tr>
           </tbody>

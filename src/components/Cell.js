@@ -1,23 +1,38 @@
 import React from 'react';
+import EditableCell from './EditableCell'
+import RenderingCell from './RenderingCell'
+import { connect } from 'react-redux';
+import { updateTradingValue } from '../actions/updateTradingValueAction';
 
-const Cell = props => {
-  function truncate(number) {
-    return Math.round(100 * number) / 100;
+class Cell extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.editModeChange = this.editModeChange.bind(this);
+    this.updateCellValue = this.updateCellValue.bind(this);
+    this.state = { isEditMode: props.isEditMode }
   }
 
-  function display(value, columnName) {
-    return truncate(value.stocks[columnName]);
+  editModeChange() {
+    console.log('in edit mode');
+    // console.log(this.state);
+    this.setState({ isEditMode: true });
   }
 
-  const paddedTd = {
-    padding: '5px',
-  };
+  updateCellValue(newValue) {
+    console.log(newValue);
+    const { dispatch, value, type } = this.props
+    dispatch(updateTradingValue(newValue, value, type))
+  }
 
-  return (
-    <td style={paddedTd}>
-      {display(props.value, props.type)}
-    </td>
-  );
-};
+  render() {
+    return this.state.isEditMode ?
+      <EditableCell onNewValue={this.updateCellValue}/>
+      :
+      <RenderingCell onEditMode={this.editModeChange}
+                     value={this.props.value}
+                     type={this.props.type}/>
+  }
+}
 
-export default Cell;
+export default connect()(Cell)
