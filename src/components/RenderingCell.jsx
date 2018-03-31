@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RenderingCell = props => {
+const RenderingCell = (props) => {
   function truncate(number) {
     return Math.round(100 * number) / 100;
   }

@@ -7,12 +7,12 @@ export function updateTradingValues() {
     types: [
       'TRADING_VALUES_REQUEST',
       'TRADING_VALUES_SUCCESS',
-      'TRADING_VALUES_FAILURE'
+      'TRADING_VALUES_FAILURE',
     ],
     payload: {
       request: {
-        url: ''
-      }
-    }
-  }
+        url: '',
+      },
+    },
+  };
 }

@@ -1,4 +1,4 @@
-import { updateTradingValue } from '../src/actions/updateTradingValueAction';
+import { updateTradingValue } from '../../../src/store/actions/updateTradingValueAction';
 
 describe('>>>A C T I O N --- Test updateTradingValueAction', () => {
   it('+++ actionCreator updateTradingValue', () => {

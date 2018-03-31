@@ -6,6 +6,7 @@ module.exports = {
   context: __dirname, //path.join(__dirname, "src"),
   devtool: debug ? "inline-sourcemap" : null,
   entry: "./src/client.js",
+  extensions: ['.js', '.jsx', '.json'],
   module: {
     loaders: [
       {

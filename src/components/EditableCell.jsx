@@ -1,6 +1,6 @@
 import React from 'react';
 
-const EditableCell = props => {
+const EditableCell = (props) => {
   function handleValueChange(event) {
     const newValue = event.target.value;
     props.onNewValue(newValue);
@@ -18,7 +18,8 @@ const EditableCell = props => {
         onChange={handleValueChange}
         style={shortWidth}
         type="text"
-        name="newTradingValue"/>
+        name="newTradingValue"
+      />
     </td>
   );
 };
