@@ -5,6 +5,7 @@ import Graph from './Graph';
 import { updateTradingValues } from '../actions/updateTradingValuesActions';
 
 const mapStateToProps = (state) => {
+  console.log(state)
   return ({
     tradingValues: state.updateTradingValuesReducers.tradingValues,
     updatedValues: state.updateTradingValuesReducers.updatedValues

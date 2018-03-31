@@ -1,4 +1,5 @@
 import { UPDATE_TRADING_VALUE } from '../actions/updateTradingValueAction';
+import applyUpdateIntoDataFromApi  from './applyUpdateIntoDataFromApi'
 
 const initialState = {
   tradingValues: [],
@@ -9,23 +10,22 @@ const initialState = {
 const updateTradingValueReducer = (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_TRADING_VALUE:
-      console.log('UPDATE TRADING VALUE called');
       const { index, newValue, stockMarket } = action
 
-      state.updatedValues.push({
-        index,
-        newValue,
-        stockMarket
-      });
-      console.log('state.updatedValues in reducer simple');
-      console.log(state.updatedValues);
-
-
-      state.tradingValues
+      newState.tradingValues
         .filter(tradingValue => tradingValue.index === index)
         .map(tradingValue => tradingValue.stocks[stockMarket] = newValue);
 
-      return state;
+
+      const newUpdatedValue = { index, newValue, stockMarket };
+      return {
+        updatedValues: [
+        ...state.updatedValues.filter(updatedValue =>
+          updatedValue.index === index && updatedValue.stocks[stockMarket] === stockMarket),
+        newUpdatedValue
+      ],
+        tradingValues: applyUpdateIntoDataFromApi([newUpdatedValue], state.tradingValues)
+      };
     default:
       return state
   }
