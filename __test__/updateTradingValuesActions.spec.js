@@ -6,7 +6,7 @@ describe('>>>A C T I O N --- Test updateTradingValuesActions', () => {
     const updateAllTradingValues = updateTradingValues(tradingValuesToUpdate)
     expect(updateAllTradingValues).toEqual(
       {
-        type: [
+        types: [
           'TRADING_VALUES_REQUEST',
           'TRADING_VALUES_SUCCESS',
           'TRADING_VALUES_FAILURE'

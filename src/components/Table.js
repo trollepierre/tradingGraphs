@@ -19,19 +19,26 @@ export class Table extends React.Component {
   }
 
   render() {
+    const solidBordered = {
+      'border-style': 'solid',
+    };
+    const paddedTd = {
+      padding: '5px',
+    }
+
     return (
       <div className="container">
-        <table>
+        <table style={solidBordered}>
           <tbody>
           <tr>
             <th>CAC40</th>
-            { this.props.tradingValues.map(value => <td
-              key={`CAC40-${value.index}`}>{ this.display(value, 'CAC40') }</td>) }
+            {this.props.tradingValues.map(value => <td style={paddedTd}
+              key={`CAC40-${value.index}`}>{this.display(value, 'CAC40')}</td>)}
           </tr>
           <tr>
             <th>NASDAQ</th>
-            { this.props.tradingValues.map(value => <td
-              key={`NASDAQ-${value.index}`}>{ this.display(value, 'NASDAQ') }</td>) }
+            {this.props.tradingValues.map(value => <td style={paddedTd}
+              key={`NASDAQ-${value.index}`}>{this.display(value, 'NASDAQ')}</td>)}
           </tr>
           </tbody>
         </table>

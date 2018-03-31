@@ -1,70 +1,175 @@
 exports[`>>>TABLE --- Snapshot +++capturing Snapshot of Table 1`] = `
 <div
   className="container">
-  <table>
+  <table
+    style={
+      Object {
+        "border-style": "solid",
+      }
+    }>
     <tbody>
       <tr>
         <th>
           CAC40
         </th>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           39.45
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
       </tr>
@@ -72,64 +177,164 @@ exports[`>>>TABLE --- Snapshot +++capturing Snapshot of Table 1`] = `
         <th>
           NASDAQ
         </th>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           5.41
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
-        <td>
+        <td
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
           0
         </td>
       </tr>
