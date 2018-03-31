@@ -5,10 +5,10 @@ import Graph from './Graph.jsx';
 import { updateTradingValues } from '../store/actions/updateTradingValuesActions';
 
 const mapStateToProps = (state) => {
-  const tradingValues = state.updateTradingValuesReducers.tradingValues;
+  const tradingValues = state.fetchAllTradingValues.tradingValues;
   return ({
     tradingValues: tradingValues,
-    updatedValues: state.updateTradingValuesReducers.updatedValues,
+    updatedValues: state.fetchAllTradingValues.updatedValues,
   });
 };
 

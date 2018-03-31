@@ -1,8 +1,8 @@
 import React from 'react';
 
-import updateTradingValue from '../../../src/store/reducers/updateTradingValueReducer';
+import updateSpecificValue from '../../../src/store/reducers/updateSpecificValue';
 
-describe('>>>R E D U C E R --- Test updateTradingValue', () => {
+describe('>>>R E D U C E R --- Test updateSpecificValue', () => {
   const tradingValues = [
     {
       "timestamp": 1522088675779,
@@ -31,7 +31,7 @@ describe('>>>R E D U C E R --- Test updateTradingValue', () => {
 
       it('should add an updating value and change a trading value', () => {
         const state = { tradingValues, updatedValues }
-        const newState = updateTradingValue(state, action)
+        const newState = updateSpecificValue(state, action)
         expect(newState).toEqual(
           {
             tradingValues:
@@ -66,7 +66,7 @@ describe('>>>R E D U C E R --- Test updateTradingValue', () => {
       it('should update updating value and change a trading value', () => {
         updatedValues = [{ "index": 1171, "newValue": 88, "stockMarket": "NASDAQ" }];
         const state = { tradingValues, updatedValues: updatedValues }
-        const newState = updateTradingValue(state, action)
+        const newState = updateSpecificValue(state, action)
         expect(newState).toEqual(
           {
             tradingValues:

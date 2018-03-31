@@ -7,7 +7,7 @@ const initialState = {
   isFetching: false,
 };
 
-const updateTradingValueReducer = (state = initialState, action) => {
+const updateSpecificValue = (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_TRADING_VALUE: {
       console.log('suis je dans le reducer ???????????????');
@@ -31,4 +31,4 @@ const updateTradingValueReducer = (state = initialState, action) => {
   }
 };
 
-export default updateTradingValueReducer;
+export default updateSpecificValue;

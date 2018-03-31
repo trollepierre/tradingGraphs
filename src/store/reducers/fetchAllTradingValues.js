@@ -7,7 +7,7 @@ import applyUpdateIntoDataFromApi from './applyUpdateIntoDataFromApi';
 
 const initialState = { tradingValues: [], updatedValues: [], isFetching: false };
 
-const updateTradingValuesReducers = (state = initialState, action) => {
+const fetchAllTradingValues = (state = initialState, action) => {
   switch (action.type) {
     case TRADING_VALUES_REQUEST:
       return {
@@ -32,4 +32,4 @@ const updateTradingValuesReducers = (state = initialState, action) => {
   }
 };
 
-export default updateTradingValuesReducers;
+export default fetchAllTradingValues;
