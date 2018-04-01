@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Cell from './Cell.jsx';
 
 const mapStateToProps = (state) => {
-  const tradingValues = state.fetchAllTradingValues.tradingValues ? state.fetchAllTradingValues.tradingValues : [];
+  const tradingValues = state.updateTradingValues.tradingValues ? state.updateTradingValues.tradingValues : [];
   return ({
     tradingValues,
   });

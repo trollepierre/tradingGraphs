@@ -12,7 +12,7 @@ describe('>>>R E D U C E R --- Test fetchAllTradingValues', () => {
   it('+++ reducer for TRADING_VALUES_REQUEST', () => {
     const state = { tradingValues: [] };
     const newState = fetchAllTradingValues(state, { type: "TRADING_VALUES_REQUEST", tradingValues: [] })
-    expect(newState).toEqual({ isFetching: true, tradingValues: [] })
+    expect(newState).toEqual({ tradingValues: [] })
   });
 
   describe('+++ reducer for TRADING_VALUES_SUCCESS', () => {
@@ -33,7 +33,7 @@ describe('>>>R E D U C E R --- Test fetchAllTradingValues', () => {
         updatedValues };
       const payload = { data: tradingValues };
       const newState = fetchAllTradingValues(state, { type: "TRADING_VALUES_SUCCESS", payload })
-      expect(newState).toEqual({ isFetching: false,
+      expect(newState).toEqual({
         updatedValues,
         "tradingValues": [
           {"timestamp":1522088675779,"index":1,"stocks":{"NASDAQ":5.4068,"CAC40":39.45096}},
@@ -47,6 +47,6 @@ describe('>>>R E D U C E R --- Test fetchAllTradingValues', () => {
   it('+++ reducer for TRADING_VALUES_FAILURE', () => {
     const state = { tradingValues: [] };
     const newState = fetchAllTradingValues(state, { type: "TRADING_VALUES_FAILURE", error: 'some_error' })
-    expect(newState).toEqual({ isFetching: false, tradingValues: [] })
+    expect(newState).toEqual({ tradingValues: [] })
   });
 });

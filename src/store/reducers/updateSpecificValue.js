@@ -1,17 +1,13 @@
 import { UPDATE_TRADING_VALUE } from '../actions/updateTradingValueAction';
-import applyUpdateIntoDataFromApi from './applyUpdateIntoDataFromApi';
 
 const initialState = {
   tradingValues: [],
   updatedValues: [],
-  isFetching: false,
 };
 
 const updateSpecificValue = (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_TRADING_VALUE: {
-      console.log('suis je dans le reducer ???????????????');
-
       const { index, newValue, stockMarket } = action;
       const newUpdatedValue = { index, newValue, stockMarket };
       const updatedValues = [
@@ -19,12 +15,14 @@ const updateSpecificValue = (state = initialState, action) => {
           !(updatedValue.index === index && updatedValue.stockMarket === stockMarket)),
         newUpdatedValue,
       ];
-      console.log(updatedValues);
-
-      return {
+      const stateWithUpdatedValues = {
+        ...state,
         updatedValues,
-        tradingValues: applyUpdateIntoDataFromApi([newUpdatedValue], state.tradingValues),
       };
+      console.log('REDUCER 1 : stateWithUpdatedValues');
+      console.log(stateWithUpdatedValues);
+
+      return stateWithUpdatedValues;
     }
     default:
       return state;

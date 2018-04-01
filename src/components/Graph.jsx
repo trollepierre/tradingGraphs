@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import { LineChart } from 'react-d3';
 
 const mapStateToProps = (state) => {
-  const tradingValues = state.fetchAllTradingValues.tradingValues ? state.fetchAllTradingValues.tradingValues : [];
-  console.log(tradingValues);
-  const filter = tradingValues.filter(val => val.stocks['CAC40'] >= 1);
-  if (filter.length > 1) {
-    console.log('gagne');
-  }
+  const tradingValues = state.updateTradingValues.tradingValues ? state.updateTradingValues.tradingValues : [];
+  // console.log(tradingValues);
+  // const filter = tradingValues.filter(val => val.stocks['CAC40'] >= 1);
+  // if (filter.length > 1) {
+  //   console.log('gagne');
+  // }
   return ({
     tradingValues,
   });
@@ -16,6 +16,7 @@ const mapStateToProps = (state) => {
 
 class Graph extends React.Component {
   render() {
+    // console.log('render du Graph');
     let tradingValues = this.props.tradingValues;
 
     const series1 = [];

@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import fetchAllTradingValues from './fetchAllTradingValues';
 import updateSpecificValue from './updateSpecificValue';
+import updateTradingValues from './updateTradingValues';
 
 const reducers = combineReducers({
   updateSpecificValue,
-  fetchAllTradingValues,
+  updateTradingValues,
 });
 
 export default reducers;
