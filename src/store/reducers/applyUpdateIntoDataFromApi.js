@@ -1,6 +1,6 @@
-const applyUpdateIntoDataFromApi = (updatedValues, tradingValues) =>
+const applyUpdateIntoDataFromApi = (specificValues, tradingValues) =>
   tradingValues.map((tradingValue) => {
-    const updates = updatedValues.filter(updatedValue => tradingValue.index === updatedValue.index);
+    const updates = specificValues.filter(specificValue => tradingValue.index === specificValue.index);
     if (updates.length === 0) {
       return tradingValue;
     }

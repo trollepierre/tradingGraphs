@@ -14,10 +14,10 @@ describe('>>>R E D U C E R --- Test updateSpecificValue', () => {
       "stocks": { "NASDAQ": 1.4068431512503855e-16, "CAC40": 2.945096443354243e-24 }
     }];
 
-  describe('+++ reducer for UPDATE_TRADING_VALUE', () => {
+  describe('+++ reducer for ADD_SPECIFIC_VALUE', () => {
     let updatedValues;
     const action = {
-      type: "UPDATE_TRADING_VALUE",
+      type: "ADD_SPECIFIC_VALUE",
       newValue: 56,
       index: 1171,
       stockMarket: 'NASDAQ'

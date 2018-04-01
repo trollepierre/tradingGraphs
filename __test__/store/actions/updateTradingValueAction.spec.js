@@ -1,7 +1,7 @@
 import { updateTradingValue } from '../../../src/store/actions/updateTradingValueAction';
 
 describe('>>>A C T I O N --- Test updateTradingValueAction', () => {
-  it('+++ actionCreator updateTradingValue', () => {
+  it('+++ actionCreator addSpecificValue', () => {
     const newValue = 56;
     const index = 1171;
     const stockMarket = 'CAC40';
@@ -13,7 +13,7 @@ describe('>>>A C T I O N --- Test updateTradingValueAction', () => {
 
     expect(updateAllTradingValues).toEqual(
       {
-        type: 'UPDATE_TRADING_VALUE',
+        type: 'ADD_SPECIFIC_VALUE',
         newValue,
         index,
         stockMarket

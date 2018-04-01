@@ -4,13 +4,11 @@ import Table from './Table.jsx';
 import Graph from './Graph.jsx';
 import { updateTradingValuesAction } from '../store/actions/updateTradingValuesActions';
 
-const mapStateToProps = (state) => {
-  const tradingValues = state.updateTradingValues.tradingValues;
-  return ({
-    tradingValues: tradingValues,
-    updatedValues: state.updateSpecificValue.updatedValues,
+const mapStateToProps = (state) =>
+  ({
+    tradingValues: state.updateTradingValues.tradingValues,
+    specificValues: state.updateSpecificValue.specificValues,
   });
-};
 
 export class Layout extends React.Component {
   constructor(props) {
@@ -20,20 +18,13 @@ export class Layout extends React.Component {
 
   componentDidMount() {
     this.dispatchUpdateTradingValues();
-    // setInterval(this.dispatchUpdateTradingValues, 10000);
+    setInterval(this.dispatchUpdateTradingValues, 1000);
   }
 
   dispatchUpdateTradingValues() {
-    // console.log('Layout va dispatch une updateTradingValuesAction');
     const { dispatch } = this.props;
-    dispatch(updateTradingValuesAction());
+    dispatch(updateTradingValuesAction(this.props.specificValues));
   }
-
-  // componentDidUpdate() {
-  //   console.log('componentDidUpdate');
-  //   const { dispatch } = this.props;
-  //   dispatch(updateTradingValuesAction());
-  // }
 
   render() {
     const layoutGraph = {
@@ -42,12 +33,6 @@ export class Layout extends React.Component {
     const layoutTable = {
       padding: '20px',
     };
-
-    console.log('render Layout');
-    console.log('this.props.tradingValues');
-    console.log(this.props.tradingValues);
-    console.log('this.props.updatedValues');
-    console.log(this.props.updatedValues);
 
     return (
       <div>

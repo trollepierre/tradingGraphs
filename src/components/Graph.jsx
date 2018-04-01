@@ -3,28 +3,27 @@ import { connect } from 'react-redux';
 import { LineChart } from 'react-d3';
 
 const mapStateToProps = (state) => {
-  const tradingValues = state.updateTradingValues.tradingValues ? state.updateTradingValues.tradingValues : [];
-  // console.log(tradingValues);
-  // const filter = tradingValues.filter(val => val.stocks['CAC40'] >= 1);
-  // if (filter.length > 1) {
-  //   console.log('gagne');
-  // }
   return ({
-    tradingValues,
+    tradingValues: state.updateTradingValues.tradingValues ? state.updateTradingValues.tradingValues : [],
   });
 };
 
 class Graph extends React.Component {
   render() {
-    // console.log('render du Graph');
     let tradingValues = this.props.tradingValues;
+
+    if (tradingValues.length === 0) {
+      return null;
+    }
 
     const series1 = [];
     const series2 = [];
+
     tradingValues.forEach((value) => {
       series1.push({ x: value.index, y: value.stocks.CAC40 });
       series2.push({ x: value.index, y: value.stocks.NASDAQ });
     });
+
     tradingValues = [
       {
         name: 'CAC40',
@@ -39,10 +38,6 @@ class Graph extends React.Component {
         values: series2,
       },
     ];
-
-    if (this.props.tradingValues.length === 0) {
-      return null;
-    }
 
     return (
       <LineChart

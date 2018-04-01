@@ -1,43 +1,33 @@
 import { TRADING_VALUES_SUCCESS } from '../actions/updateTradingValuesActions';
-import { UPDATE_TRADING_VALUE } from '../actions/updateTradingValueAction';
+import { ADD_SPECIFIC_VALUE } from '../actions/addSpecificValueAction';
 
 import applyUpdateIntoDataFromApi from './applyUpdateIntoDataFromApi';
 
-const initialState = { tradingValues: [], updatedValues: [] };
+const initialState = { tradingValues: [] };
 
 const updateTradingValues = (state = initialState, action) => {
-
   switch (action.type) {
     case TRADING_VALUES_SUCCESS:
-      console.log('REDUCER 2 : old state AVANT TRADING VAL SUCCEES');
-      console.log('state');
-      console.log(state);
-      const tradingValues = applyUpdateIntoDataFromApi(state.updatedValues, action.payload.data);
       return {
         ...state,
-        tradingValues,
+        tradingValues: applyUpdateIntoDataFromApi(
+          action.meta.previousAction.otherpayload.specificValues,
+          action.payload.data),
       };
-    case UPDATE_TRADING_VALUE:
-      const { index, newValue, stockMarket } = action;
-      const newUpdatedValue = { index, newValue, stockMarket };
-
-      const updatedValues = [
-        ...state.updatedValues,
-        newUpdatedValue
+    case ADD_SPECIFIC_VALUE: {
+      const { index, newValue, stockMarket, specificValues } = action.payload;
+      const updatedSpecificValues = [
+        specificValues,
+        { index, newValue, stockMarket }
       ];
-
-      const stateWithTradingValues = {
+      return {
         ...state,
-        tradingValues: applyUpdateIntoDataFromApi(updatedValues, state.tradingValues),
+        tradingValues: applyUpdateIntoDataFromApi(updatedSpecificValues, state.tradingValues),
       };
-
-      console.log('REDUCER 2 : stateWithTradingValues');
-      console.log(stateWithTradingValues);
-      return stateWithTradingValues;
+    }
     default:
       return state;
   }
 };
 
 export default updateTradingValues;
-

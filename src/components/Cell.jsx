@@ -2,7 +2,13 @@ import React from 'react';
 import EditableCell from './EditableCell.jsx';
 import RenderingCell from './RenderingCell.jsx';
 import { connect } from 'react-redux';
-import { updateTradingValue } from '../store/actions/updateTradingValueAction';
+import { addSpecificValueAction } from '../store/actions/addSpecificValueAction';
+
+const mapStateToProps = (state) => {
+  return ({
+    specificValues: state.updateSpecificValue.specificValues,
+  });
+};
 
 class Cell extends React.Component {
   constructor(props) {
@@ -13,14 +19,12 @@ class Cell extends React.Component {
   }
 
   editModeChange() {
-    console.log('in edit mode');
     this.setState({ isEditMode: true });
   }
 
   updateCellValue(newValue) {
-    console.log(newValue);
     const { dispatch, value, type } = this.props;
-    dispatch(updateTradingValue(newValue, value.index, type));
+    dispatch(addSpecificValueAction(newValue, value.index, type, this.props.specificValues));
   }
 
   render() {
@@ -35,4 +39,4 @@ class Cell extends React.Component {
   }
 }
 
-export default connect()(Cell);
+export default connect(mapStateToProps)(Cell);
