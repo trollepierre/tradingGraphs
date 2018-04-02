@@ -55,7 +55,7 @@ Every second, Layout will dispatch the action UPDATE_TRADING_VALUES. This action
 This project is a POC on Redux. I try to follow TDD as possible however it was complicated to write correct tests as a first try. The quality of the integration tests (tests on components) could be improved. But unit tests on store methods is optimal.
 
 
-## Authors
+## Author
 
 * **Pierre TROLLE** [GitHub](https://github.com/trollepierre)
 
