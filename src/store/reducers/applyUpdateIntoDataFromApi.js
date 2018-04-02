@@ -11,7 +11,7 @@ const applyUpdateIntoDataFromApi = (specificValues, tradingValues) =>
       return ({
         ...tradingValue,
         stocks: {
-          CAC40: parseInt(tradingValue.stocks.CAC40),
+          CAC40: parseFloat(tradingValue.stocks.CAC40),
           NASDAQ: nasdaqUpdates[0].newValue,
         },
       });
@@ -22,15 +22,15 @@ const applyUpdateIntoDataFromApi = (specificValues, tradingValues) =>
         ...tradingValue,
         stocks: {
           NASDAQ: tradingValue.stocks.NASDAQ,
-          CAC40: parseInt(cac40Updates[0].newValue, 10),
+          CAC40: parseFloat(cac40Updates[0].newValue),
         },
       });
     }
     return ({
       ...tradingValue,
       stocks: {
-        NASDAQ: parseInt(nasdaqUpdates[0].newValue),
-        CAC40: parseInt(cac40Updates[0].newValue),
+        NASDAQ: parseFloat(nasdaqUpdates[0].newValue),
+        CAC40: parseFloat(cac40Updates[0].newValue),
       },
     });
   });

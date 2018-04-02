@@ -2,8 +2,8 @@ import { updateTradingValuesAction } from '../../../src/store/actions/updateTrad
 
 describe('>>>A C T I O N --- Test updateTradingValuesActions', () => {
   it('+++ actionCreator updateTradingValuesAction', () => {
-    const tradingValuesToUpdate = [];
-    const updateAllTradingValues = updateTradingValuesAction(tradingValuesToUpdate)
+    const specificValues = [];
+    const updateAllTradingValues = updateTradingValuesAction(specificValues);
     expect(updateAllTradingValues).toEqual(
       {
         types: [
@@ -15,6 +15,9 @@ describe('>>>A C T I O N --- Test updateTradingValuesActions', () => {
           request: {
             url: ''
           }
+        },
+        otherpayload: {
+          specificValues
         }
       })
   });

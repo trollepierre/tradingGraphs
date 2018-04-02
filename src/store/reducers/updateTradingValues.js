@@ -8,6 +8,7 @@ const initialState = { tradingValues: [] };
 const updateTradingValues = (state = initialState, action) => {
   switch (action.type) {
     case TRADING_VALUES_SUCCESS:
+      //TODO: look to redux-thunk or redux-saga instead of axios-middleware in order to avoid l15
       return {
         ...state,
         tradingValues: applyUpdateIntoDataFromApi(
