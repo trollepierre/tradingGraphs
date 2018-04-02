@@ -39,8 +39,22 @@ jobs:
       - run: yarn test
 
   deploy:
-    staging:
-      branch: master
-      heroku:
-        appname: trading-values
+      machine:
+          enabled: true
+      working_directory: ~/tradingGraphs
+      environment:
+        HEROKU_APP: trading-values
+      steps:
+        - checkout
+        - run:
+            name: Setup Heroku
+            command: bash .circleci/setup-heroku.sh
+
+        - run:
+            command: |
+              git push heroku origin:master
+              heroku run rake db:migrate
+              sleep 5  # sleep for 5 seconds to wait for dynos
+              heroku restart
+
 
