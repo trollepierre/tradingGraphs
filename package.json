@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint src/**/*.js src/**/*.jsx __test__/**/*.js __test__/**/*.jsx",
-    "lint:fix": "eslint src/**/*.js --fix",
+    "lint:fix": "eslint src/**/*.js src/**/*.jsx __test__/**/*.js __test__/**/*.jsx --fix",
     "start": "webpack-dev-server --content-base --inline --hot",
     "test": "jest",
     "test:accept-snapshot": "jest -u"

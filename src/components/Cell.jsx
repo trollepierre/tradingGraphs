@@ -1,7 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import EditableCell from './EditableCell.jsx';
 import RenderingCell from './RenderingCell.jsx';
-import { connect } from 'react-redux';
 import { addSpecificValueAction } from '../store/actions/addSpecificValueAction';
 
 const mapStateToProps = (state) => {

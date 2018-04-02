@@ -39,10 +39,10 @@ export class Layout extends React.Component {
         <h1>Trading Values</h1>
         <button onClick={this.dispatchUpdateTradingValues}>Update please</button>
         <div style={layoutGraph}>
-          <Graph/>
+          <Graph />
         </div>
         <div style={layoutTable}>
-          <Table/>
+          <Table />
         </div>
       </div>
     );
