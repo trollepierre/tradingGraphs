@@ -38,23 +38,12 @@ jobs:
       # run tests!
       - run: yarn test
 
-  deploy:
-      machine:
-          enabled: true
-      working_directory: ~/tradingGraphs
-      environment:
-        HEROKU_APP: trading-values
-      steps:
-        - checkout
-        - run:
-            name: Setup Heroku
-            command: bash .circleci/setup-heroku.sh
-
-        - run:
-            command: |
-              git push heroku origin:master
+    #  - run: bash .circleci/setup-heroku.sh
+      - deploy:
+          name: Deploy Master to Heroku
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              git push heroku master
               heroku run rake db:migrate
-              sleep 5  # sleep for 5 seconds to wait for dynos
               heroku restart
-
-
+            fi
