@@ -38,12 +38,3 @@ jobs:
       # run tests!
       - run: yarn test
 
-    #  - run: bash .circleci/setup-heroku.sh
-      - deploy:
-          name: Deploy Master to Heroku
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              git push heroku master
-              heroku run rake db:migrate
-              heroku restart
-            fi
